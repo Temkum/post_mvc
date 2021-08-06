@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require APP_ROOT . '/views/inc/header.php'; ?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+<h1><?= $data['title']; ?></h1>
+<h2><?= APP_ROOT; ?></h2>
+<h2><?= URL_ROOT; ?></h2>
 
-<body>
-  <h1><?= $data['title']; ?></h1>
-  <h2><?= APP_ROOT; ?></h2>
-</body>
 
-</html>
+<?php require APP_ROOT . '/views/inc/footer.php'; ?>

@@ -3,7 +3,7 @@
 define('APP_ROOT', dirname(dirname((__FILE__))));
 
 // url root
-define('URL_ROOT', 'http://post_mvc');
+define('URL_ROOT', "http://localhost/post_mvc/public");
 
 // site name
 define('SITE_NAME', 'PostMVC');
