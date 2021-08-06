@@ -2,7 +2,15 @@
 {
   public function __construct()
   {
+  }
+
+  public function index()
+  {
     # code...
-    echo 'Pages loaded';
+  }
+
+  public function about($id)
+  {
+    echo $id;
   }
 }
