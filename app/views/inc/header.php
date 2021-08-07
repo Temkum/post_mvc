@@ -7,7 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= SITE_NAME; ?></title>
 
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="<?= URL_ROOT; ?>/css/bootstrap4.3.1.min.css">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="<?= URL_ROOT; ?>/css/all.min.css">
+
+
   <link rel="stylesheet" href="<?= URL_ROOT; ?>/css/main.css">
 </head>
 
 <body>
+  <?php require APP_ROOT . '/views/inc/navbar.php'; ?>
+
+  <!-- bootstrap container -->
+  <div class="container">

@@ -12,4 +12,7 @@ define('APP_ROOT', dirname(dirname((__FILE__))));
 define('URL_ROOT', "http://localhost/post_mvc/public");
 
 // site name
-define('SITE_NAME', 'PostMVC');
+define('SITE_NAME', 'Post_MVC');
+
+// app version
+define('APP_VERSION', '1.0.0');
