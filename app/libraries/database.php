@@ -23,11 +23,14 @@ class Database
   {
     # set DSN
     $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name;
-    $options = [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+    $options = [
+      PDO::ATTR_PERSISTENT => true,
+      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ];
 
     // create PDO instance
     try {
-      $this->dbh = new PDO($dsn, $this->user, $this->db_pwd, $options);
+      $this->db_handler = new PDO($dsn, $this->user, $this->db_pwd, $options);
     } catch (PDOException $e) {
       //throw $th;
       $this->error = $e->getMessage();
@@ -71,7 +74,6 @@ class Database
   // execute prepared stmt
   public function execute()
   {
-    # code...
     return $this->stmt->execute();
   }
 

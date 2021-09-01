@@ -2,7 +2,7 @@
 
 /*
 * Base controller
-* Load the models and views
+* Loads the models and views
 */
 
 class Controller
@@ -27,7 +27,7 @@ class Controller
     } else {
       // views does not exist
 
-      exit('View does not exist');
+      exit('View does not exist!');
     }
   }
 }

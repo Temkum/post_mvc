@@ -5,11 +5,14 @@
     <h1 class="display-3"><?= $data['title']; ?></h1>
     <p class="lead"><?= $data['description']; ?></p>
     <hr class="my-2">
-    <p>More info</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
-    </p>
   </div>
+
+  <ul>
+    <?php
+    foreach ($data['posts'] as $post) :  ?>
+      <li><?= $post->title; ?> </li>
+    <?php endforeach; ?>
+  </ul>
 </div>
 <h2></h2>
 

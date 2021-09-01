@@ -6,10 +6,10 @@ define('DB_PWD', 'loveisall21');
 define('DB_NAME', 'php_postmvc');
 
 // app root
-define('APP_ROOT', dirname(dirname((__FILE__))));
+define('APP_ROOT', dirname(dirname(__FILE__)));
 
 // url root
-define('URL_ROOT', "http://localhost/post_mvc/public");
+define('ROOT', "http://localhost/post_mvc");
 
 // site name
 define('SITE_NAME', 'Post_MVC');
