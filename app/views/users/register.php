@@ -6,10 +6,10 @@
       <h2>Create an account</h2>
       <p>Please fill out this form to register with us</p>
 
-      <form action="<?= ROOT; ?>/users/register" method="POST">
+      <form action="<?php echo ROOT; ?>/users/register" method="POST">
         <div class="form-group">
           <label for="name">Name: <sup>*</sup></label>
-          <input type="text" name="name" id="" class="form-control form-control-md <?= (!empty($data['name_err'])) ? 'is-invalid' : ''; ?>" value="<?= $data['name']; ?>">
+          <input type="text" name="name" id="" class="<?php echo (!empty($data['name_err'])) ? 'is-invalid' : ''; ?> form-control form-control-md " value="<?= $data['name']; ?>">
           <span class="invalid-feedback"><?= $data['name_err']; ?></span>
         </div>
         <div class="form-group">
@@ -19,12 +19,12 @@
         </div>
         <div class="form-group">
           <label for="password">Password: <sup>*</sup></label>
-          <input type="password" name="password" id="" class="form-control form-control-md <?= (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?= $data['password']; ?>">
+          <input type="password" name="password" id="" class="form-control form-control-md <?= (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="">
           <span class="invalid-feedback"><?= $data['password_err']; ?></span>
         </div>
         <div class="form-group">
           <label for="password">Confirm Password: <sup>*</sup></label>
-          <input type="password" name="cpassword" id="" class="form-control form-control-md <?= (!empty($data['cpassword_err'])) ? 'is-invalid' : ''; ?>" value="<?= $data['cpassword']; ?>">
+          <input type="password" name="cpassword" id="" class="form-control form-control-md <?= (!empty($data['cpassword_err'])) ? 'is-invalid' : ''; ?>" value="">
           <span class="invalid-feedback"><?= $data['cpassword_err']; ?></span>
         </div>
         <div class="row">
