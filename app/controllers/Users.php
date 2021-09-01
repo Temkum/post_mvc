@@ -152,6 +152,7 @@ class Users extends Controller
 
         if ($logged_in_user) {
           # create session
+          $this->createUserSession($logged_in_user);
         } else {
           $data['password_err'] = 'Incorrect password';
 
@@ -174,6 +175,44 @@ class Users extends Controller
 
       // load view
       $this->view('users/login', $data);
+    }
+  }
+
+  public function createUserSession($user)
+  {
+    # code...
+    $_SESSION['user_id'] = $user->id;
+    $_SESSION['user_email'] = $user->email;
+    $_SESSION['user_name'] = $user->name;
+
+    redirect('pages/index');
+  }
+
+  public function logout()
+  {
+    unset($_SESSION['user_id']);
+    unset($_SESSION['user_email']);
+    unset($_SESSION['user_name']);
+
+    session_destroy();
+    redirect('users/login');
+  }
+
+  public function isLoggedIn()
+  {
+    /* 
+    * This will be used for user access
+    * to protect routes or pages which users can't access
+    * Used to restrict user access 
+    */
+
+    if (isset($_SESSION['user_id'])) {
+      # return true if user is logged in
+
+      return true;
+    } else {
+
+      return false;
     }
   }
 }

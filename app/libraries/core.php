@@ -14,7 +14,7 @@ class Core
 
     public function __construct()
     {
-          // print_r($this->getUrl());
+        // print_r($this->getUrl());
         $url = $this->getUrl();
 
         // look in controllers for first value
