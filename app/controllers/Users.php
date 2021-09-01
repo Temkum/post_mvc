@@ -119,7 +119,6 @@ class Users extends Controller
 
       // process form input
       $data = [
-
         'email' => trim($_POST['email']),
         'password' => trim($_POST['password']),
         'email_err' => '',
@@ -136,14 +135,31 @@ class Users extends Controller
         $data['password_err'] = 'Please enter password';
       }
 
+      // check if user/email exist
+      if ($this->userModel->findUserByEmail($data['email'])) {
+        // user found
+      } else {
+        // no user found
+        $data['email_err'] = 'No user found!';
+      }
+
       // make sure errors are empty
       if (empty($data['email_err']) && empty($data['password_err'])) {
         // validate
 
-        // exit('GREAT');
+        // check and set logged in user
+        $logged_in_user = $this->userModel->login($data['email'], $data['password']);
+
+        if ($logged_in_user) {
+          # create session
+        } else {
+          $data['password_err'] = 'Incorrect password';
+
+          $this->view('users/login', $data);
+        }
       } else {
         // load views with errors
-        $this->view('users/register', $data);
+        $this->view('users/login', $data);
       }
     } else {
       // init data

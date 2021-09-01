@@ -32,6 +32,25 @@ class User
     }
   }
 
+  public function login($email, $password)
+  {
+    # code...
+    $this->DB->query("SELECT * FROM users WHERE email = :email");
+    $this->DB->bind(':email', $email);
+
+    $row = $this->DB->singleResult();
+
+    $hashed_pwd = $row->password;
+    if (password_verify($password, $hashed_pwd)) {
+      # code...
+
+      return $row;
+    } else {
+
+      return false;
+    }
+  }
+
   public function findUserByEmail($email)
   {
     # find user by email

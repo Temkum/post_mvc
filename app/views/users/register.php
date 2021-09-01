@@ -6,10 +6,10 @@
       <h2>Create an account</h2>
       <p>Please fill out this form to register with us</p>
 
-      <form action="<?php echo ROOT; ?>/users/register" method="POST">
+      <form action="<?= ROOT; ?>/users/register" method="POST">
         <div class="form-group">
           <label for="name">Name: <sup>*</sup></label>
-          <input type="text" name="name" id="" class="<?php echo (!empty($data['name_err'])) ? 'is-invalid' : ''; ?> form-control form-control-md " value="<?= $data['name']; ?>">
+          <input type="text" name="name" id="" class="<?= (!empty($data['name_err'])) ? 'is-invalid' : ''; ?> form-control form-control-md " value="<?= $data['name']; ?>">
           <span class="invalid-feedback"><?= $data['name_err']; ?></span>
         </div>
         <div class="form-group">
