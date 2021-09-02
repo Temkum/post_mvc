@@ -48,4 +48,36 @@ class Post
       return false;
     }
   }
+  
+  public function updatePost($data)
+  {
+    # prepare query
+    $this->db->query("UPDATE posts SET title:title, body=:body WHERE id = :id )");
+
+    // bind param values
+    $this->db->bind(':id', $data['id']);
+    $this->db->bind(':title', $data['title']);
+    $this->db->bind(':body', $data['body']);
+
+    // execute
+    if ($this->db->execute()) {
+      # all went well
+
+      return true;
+    } else {
+
+      return false;
+    }
+  }
+
+  public function getSinglePost($id)
+  {
+    # code...
+    $this->db->query("SELECT * FROM posts WHERE id = :id");
+    $this->db->bind(':id', $id);
+
+    $row = $this->db->singleResult();
+
+    return $row;
+  }
 }

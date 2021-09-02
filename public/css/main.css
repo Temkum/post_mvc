@@ -5,3 +5,10 @@
 .col a {
   font-size: 12px;
 }
+
+.card-width {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

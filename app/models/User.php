@@ -70,4 +70,20 @@ class User
       return false;
     }
   }
+
+  public function getSingleUser($id)
+  {
+    # find user by email
+    $this->DB->query("SELECT * FROM users WHERE id = :id");
+    $this->DB->bind(':id', $id);
+
+    // get single result
+    $row = $this->DB->singleResult();
+
+    // check row
+    if ($this->DB->rowCount() > 0) {
+
+      return $row;
+    }
+  }
 }
