@@ -1,8 +1,9 @@
 <?php require APP_ROOT . '/views/inc/header.php'; ?>
+<?php flash('post_message'); ?>
 
 <div class="row mb-3">
   <div class="col-md-6">
-    <h1>Posts</h1>
+    <h1 class="display-4">Posts</h1>
   </div>
   <div class="col-md-6">
     <a href="<?= ROOT; ?>/posts/add" class="btn btn-primary">Add post</a>
@@ -14,7 +15,7 @@
     <div class="bg-light p-2 mb-3">
       Written by <strong><?= $post->name; ?></strong> on <?= $post->postCreated; ?>
     </div>
-    <p class="card-text"><?= $post->body; ?></p>
+    <p class="card-text display"><?= $post->body; ?></p>
     <a href="<?= ROOT; ?>/posts/show/<?= $post->postId; ?>" class="btn btn-dark">More</a>
   </div>
 <?php endforeach; ?>

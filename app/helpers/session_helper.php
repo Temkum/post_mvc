@@ -36,20 +36,20 @@ function flash($name = '', $msg = '', $class = 'alert alert-success')
   }
 }
 
-  function isLoggedIn()
-  {
-    /* 
+function isLoggedIn()
+{
+  /* 
     * This will be used for user access
     * to protect routes or pages which users can't access
     * Used to restrict user access 
     */
 
-    if (isset($_SESSION['user_id'])) {
-      # return true if user is logged in
+  if (isset($_SESSION['user_id'])) {
+    # return true if user is logged in
 
-      return true;
-    } else {
+    return true;
+  } else {
 
-      return false;
-    }
+    return false;
   }
+}
